@@ -8,11 +8,32 @@
 </head>
 
 <body>
-  <a id="frame1" href="/image/frame1.png">./image/frame1.png</a>
+
+  <hr>
+
+  <a id="frame1_png" href="/image/frame1.png">./image/frame1.png</a>
+  <img style="width: 100%;" src="https://qdioweb.vercel.app/image/frame1.png" alt="frame1">
+
+  <hr>
+
+  <a id="frame1_webp" href="/image/frame1.webp">./image/frame1.webp</a>
+  <img style="width: 100%;" src="https://qdioweb.vercel.app/image/frame1.webp" alt="frame1">
+
+  <hr>
   <script>
-    const frame1 = document.getElementById('frame1');
+    const frame1 = document.getElementById('frame1_png');
 
     frame1.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = e.target.href;
+      window
+        .open(url, '_blank')
+        .focus();
+    });
+
+    const frame1_webp = document.getElementById('frame1_webp');
+
+    frame1_webp.addEventListener('click', (e) => {
       e.preventDefault();
       const url = e.target.href;
       window
