@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>qdioweb</title>
+</head>
+
+<body>
+  <a id="frame1" href="/image/frame1.png">./image/frame1.png</a>
+  <script>
+    const frame1 = document.getElementById('frame1');
+
+    frame1.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = e.target.href;
+      window
+        .open(url, '_blank')
+        .focus();
+    });
+  </script>
+</body>
+
+</html>
