@@ -5,40 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>qdioweb</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: grid;
+    }
+  </style>
 </head>
 
 <body>
 
-  <hr>
+  <div class="container">
 
-  <a id="frame1_png" href="/image/frame1.png">./image/frame1.png</a>
-  <img style="width: 100%;" src="https://qdioweb.vercel.app/image/frame1.png" alt="frame1">
+  </div>
 
-  <hr>
-
-  <a id="frame1_webp" href="/image/frame1.webp">./image/frame1.webp</a>
-  <img style="width: 100%;" src="https://qdioweb.vercel.app/image/frame1.webp" alt="frame1">
-
-  <hr>
   <script>
-    const frame1 = document.getElementById('frame1_png');
+    const container = document.querySelector('.container');
 
-    frame1.addEventListener('click', (e) => {
-      e.preventDefault();
-      const url = e.target.href;
-      window
-        .open(url, '_blank')
-        .focus();
-    });
+    const images = [
+      "img0.webp",
+      "img1.webp",
+      "img2.webp",
+      "img3.webp",
+      "img4.webp",
+      "img5.webp",
+      "img6.webp",
+      "img7.webp",
+      "img8.webp",
+      "img9.webp",
+      "img10.webp",
+      "img11.webp",
+      "img12.webp",
+      "img13.webp",
+      "img14.webp"
+    ];
 
-    const frame1_webp = document.getElementById('frame1_webp');
-
-    frame1_webp.addEventListener('click', (e) => {
-      e.preventDefault();
-      const url = e.target.href;
-      window
-        .open(url, '_blank')
-        .focus();
+    images.forEach(image => {
+      const img = document.createElement('img');
+      img.src = `./images/${image}`;
+      img.style.width = '100%';
+      img.style.height = 'fit-content';
+      container.appendChild(img);
+      img.addEventListener('click', () => {
+        window.open(`./images/${image}`);
+      });
     });
   </script>
 </body>
